@@ -13,7 +13,7 @@ branches:
 
 before_install:
   - export PROJECT=scala-alpine
-  - $(PROJECT)/make login
+  - cd $PROJECT && make login
 
 script:
   - echo $(PROJECT)
