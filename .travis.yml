@@ -12,7 +12,7 @@ branches:
     - develop
 
 before_install:
-  - SET PROJECT=scala-alpine
+  - export PROJECT=scala-alpine
   - $(PROJECT)/make login
 
 script:
