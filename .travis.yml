@@ -16,7 +16,7 @@ before_install:
   - cd $PROJECT && make login
 
 script:
-  - echo $(PROJECT)
+  - make lint
 
 notifications:
   email:
