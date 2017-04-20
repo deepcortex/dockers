@@ -14,13 +14,8 @@ branches:
 
 before_install:
   - export PROJECT=${TRAVIS_TAG%%:*}
-  - echo "TRAVIS_BRANCH: ${TRAVIS_BRANCH}"
-  - echo "TRAVIS_TAG: ${TRAVIS_TAG}"
-  - echo "TRAVIS_PULL_REQUEST: ${TRAVIS_PULL_REQUEST}"
-  - cd $PROJECT && make login
+
   
-
-
 notifications:
   email:
     recipients:
