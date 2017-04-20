@@ -10,12 +10,17 @@ branches:
     - master
     - staging
     - develop
-	- /^[a-z]{1,20}:[0-9]{12}$/
+    - /^[a-z]{1,20}:[0-9]{12}$/
 
 before_install:
   - export PROJECT=${TRAVIS_TAG%%:*}
-
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_TAG
+  - echo $TRAVIS_PULL_REQUEST
+  - cd $PROJECT && make login
   
+
+
 notifications:
   email:
     recipients:
