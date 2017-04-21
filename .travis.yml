@@ -21,7 +21,8 @@ before_install:
   - pwd
   - echo $TRAVIS_COMMIT_RANGE
 
-
+script:
+  - ./script-phase.rb
 
 notifications:
   email:
