@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'utils.rb'
+require_relative 'utils.rb'
 
 dockers_to_build.each do |docker|
   %x[cd $docker && make push]
