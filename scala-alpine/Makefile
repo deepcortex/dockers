@@ -42,3 +42,4 @@ push:
 build: lint build tag test
 
 release: build push
+
