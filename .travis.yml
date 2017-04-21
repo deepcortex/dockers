@@ -18,6 +18,7 @@ before_install:
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_TAG
   - echo $TRAVIS_PULL_REQUEST
+  - pwd
   - CHANGES=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD master))
   - echo $CHANGES
   - cd $PROJECT && make login
