@@ -27,7 +27,7 @@ dockers_to_build = all_folders - exclusion
 puts "dockers_to_build: #{dockers_to_build}"
 
 dockers_to_build.each do |docker|
-  puts docker
+  %x[cd $docker && make build]
 end.empty? and begin
   puts 'Nothing to build'
 end

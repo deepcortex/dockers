@@ -13,13 +13,7 @@ branches:
     - /^[a-z]{1,20}:[0-9]{12}$/
 
 before_install:
-  - export PROJECT=${TRAVIS_TAG%%:*}
-  - echo $PROJECT
-  - echo $TRAVIS_BRANCH
-  - echo $TRAVIS_TAG
-  - echo $TRAVIS_PULL_REQUEST
-  - pwd
-  - echo $TRAVIS_COMMIT_RANGE
+  docker login -u "$(DOCKER_USER)" -p "$(DOCKER_PASSWORD)"
 
 script:
   - ./scripts/script-phase.rb

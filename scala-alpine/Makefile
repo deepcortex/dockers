@@ -34,12 +34,11 @@ tag:
 	docker tag $(GIT_TAG) $(BUILD_TAG)
 	docker tag $(GIT_TAG) $(LATEST_TAG)
 
-login:
-	@docker login -u "$(DOCKER_USER)" -p "$(DOCKER_PASSWORD)"
-
 push:
 	docker push $(GIT_TAG)
 	docker push $(BUILD_TAG)
 	docker push $(LATEST_TAG)
+	
+build: lint build tag test
 
-release: lint build tag test push
+release: build push
