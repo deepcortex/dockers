@@ -14,10 +14,10 @@ branches:
 
 before_install:
   - export PROJECT=${TRAVIS_TAG%%:*}
-  - echo PROJECT
+  - echo $PROJECT
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_TAG
-  - echo $TRAVIS_PULL_REQUEST: ${TRAVIS_PULL_REQUEST}"
+  - echo $TRAVIS_PULL_REQUEST
   - CHANGES=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD master))
   - echo $CHANGES
   - cd $PROJECT && make login
