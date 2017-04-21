@@ -22,7 +22,7 @@ before_install:
   - echo $TRAVIS_COMMIT_RANGE
 
 script:
-  - ./script-phase.rb
+  - ./scripts/script-phase.rb
 
 notifications:
   email:
