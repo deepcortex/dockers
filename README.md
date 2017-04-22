@@ -4,10 +4,13 @@
 # dockers
 A set of docker images
 
-## docker-scala-alpine
+## scala-alpine
 [![](https://images.microbadger.com/badges/image/deepcortex/scala-alpine.svg)](https://microbadger.com/images/deepcortex/scala-alpine "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/deepcortex/scala-alpine.svg)](https://microbadger.com/images/deepcortex/scala-alpine "Get your own commit badge on microbadger.com")
 
-## docker-sbt-alpine
+## sbt-alpine
 [![](https://images.microbadger.com/badges/image/deepcortex/sbt-alpine.svg)](https://microbadger.com/images/deepcortex/sbt-alpine "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/deepcortex/sbt-alpine.svg)](https://microbadger.com/images/deepcortex/sbt-alpine "Get your own commit badge on microbadger.com")
+
+## dcos-rabbitmq
+
