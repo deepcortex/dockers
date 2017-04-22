@@ -10,7 +10,7 @@ puts "dockers_to_build: #{dockers_to_build}"
 
 dockers_to_build.each do |docker|
   puts "Building #{docker} image..."
-  %x[cd #{docker} && make build]
+  %x[cd #{docker} && make pre-release]
   puts "#{docker}... image has been built"
 end.empty? and begin
   puts 'Nothing to build'

@@ -1,5 +1,5 @@
 OWNER=deepcortex
-IMAGE_NAME=scala
+IMAGE_NAME=scala-alpine
 VCS_REF=`git rev-parse --short HEAD`
 IMAGE_VERSION=1.0.$(TRAVIS_BUILD_NUMBER)
 BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
@@ -42,6 +42,6 @@ push:
 	docker push $(BUILD_TAG)
 	docker push $(LATEST_TAG)
 	
-build: lint build tag test
+pre-release: lint build tag test
 
-release: build push
+release: pre-release push
