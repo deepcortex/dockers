@@ -9,7 +9,9 @@ puts "all_folders: #{all_folders}"
 puts "dockers_to_build: #{dockers_to_build}"
 
 dockers_to_build.each do |docker|
-  %x[cd $docker && make build]
+  puts "Building #{docker} image..."
+  %x[cd #{docker} && make build]
+  puts "#{docker}... image has been built"
 end.empty? and begin
   puts 'Nothing to build'
 end

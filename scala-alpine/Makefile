@@ -10,6 +10,9 @@ BUILD_TAG=$(QNAME):$(IMAGE_VERSION)
 LATEST_TAG=$(QNAME):latest
 
 default: build tag
+	
+t1:
+	pwd
 
 debug:
 	docker run --rm -it $(LATEST_TAG) /bin/sh	
@@ -42,4 +45,3 @@ push:
 build: lint build tag test
 
 release: build push
-
