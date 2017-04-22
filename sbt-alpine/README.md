@@ -3,9 +3,9 @@
 [![](https://images.microbadger.com/badges/image/deepcortex/scala-alpine.svg)](https://microbadger.com/images/deepcortex/scala-alpine "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/deepcortex/scala-alpine.svg)](https://microbadger.com/images/deepcortex/scala-alpine "Get your own commit badge on microbadger.com")
 
-# docker-scala-alpine
-Docker image providing Scala
+# docker-sbt-alpine
+Docker image providing SBT and Scala
 
-FROM openjdk:8-jre-alpine
+FROM deepcortex/scala-alpine
 
-To run ```make run``` 
+To run ```make run```

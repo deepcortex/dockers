@@ -1,5 +1,5 @@
 OWNER=deepcortex
-IMAGE_NAME=scala-alpine
+IMAGE_NAME=sbt-alpine
 VCS_REF=`git rev-parse --short HEAD`
 IMAGE_VERSION=1.0.$(TRAVIS_BUILD_NUMBER)
 BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
@@ -14,11 +14,11 @@ default: build tag
 debug:
 	docker run --rm -it $(LATEST_TAG) /bin/sh	
 
-test:
-	docker run --rm -it $(LATEST_TAG) pwd
+test:	
+    docker run --rm -it $(LATEST_TAG) pwd
 
 run:
-	docker run --rm -it $(LATEST_TAG) scala
+	docker run --rm -it -v ~/projects:/projects $(LATEST_TAG) /bin/sh
 	
 lint:
 	docker run -it --rm -v "$(PWD)/Dockerfile:/Dockerfile:ro" redcoolbeans/dockerlint
@@ -42,4 +42,3 @@ push:
 pre-release: lint build tag test
 
 release: pre-release push
-
