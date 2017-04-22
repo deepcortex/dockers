@@ -15,7 +15,6 @@ dockers_to_build.each do |docker|
   
   unless $? == 0
     raise("Build failed...")
-    fail
   end
   
   puts output
