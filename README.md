@@ -9,5 +9,5 @@ A set of docker images
 [![](https://images.microbadger.com/badges/commit/deepcortex/scala-alpine.svg)](https://microbadger.com/images/deepcortex/scala-alpine "Get your own commit badge on microbadger.com")
 
 ## docker-sbt-alpine
-[![](https://images.microbadger.com/badges/image/deepcortex/scala-alpine.svg)](https://microbadger.com/images/deepcortex/scala-alpine "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/commit/deepcortex/scala-alpine.svg)](https://microbadger.com/images/deepcortex/scala-alpine "Get your own commit badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/deepcortex/sbt-alpine.svg)](https://microbadger.com/images/deepcortex/sbt-alpine "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/deepcortex/sbt-alpine.svg)](https://microbadger.com/images/deepcortex/sbt-alpine "Get your own commit badge on microbadger.com")
