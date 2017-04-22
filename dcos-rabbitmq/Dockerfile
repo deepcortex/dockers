@@ -33,4 +33,3 @@ LABEL maintainer="aldrin+gh@leal.eng.br" \
       org.label-schema.schema-version="1.0" \
 	  org.label-schema.docker.cmd="docker run --rm -it -v HOST_PATH:/projects deepcortex/dcos-rabbitmq /bin/sh"
 	  
-	  
