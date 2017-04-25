@@ -12,6 +12,12 @@ dockers_to_build.each do |docker|
   puts "Building #{docker} image..."
   output = %x[cd #{docker} && make pre-release]
   puts output
+  
+  unless $? == 0
+    raise("Build failed...")
+  end
+  
+  puts output
   puts "#{docker}... image has been built"
 end.empty? and begin
   puts 'Nothing to build'
