@@ -6,4 +6,4 @@ Docker image providing Scala
 
 FROM openjdk:8-jre-alpine
 
-To run ```make run``` 
+To run ```make run```
