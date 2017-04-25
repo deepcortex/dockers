@@ -19,7 +19,7 @@ test:
 
 run:
 	docker run --rm -it -v ~/projects:/projects $(LATEST_TAG) /bin/sh
-	
+
 lint:
 	docker run -it --rm -v "$(PWD)/Dockerfile:/Dockerfile:ro" redcoolbeans/dockerlint
 
@@ -29,7 +29,7 @@ build:
 		--build-arg IMAGE_VERSION=$(IMAGE_VERSION) \
 		--build-arg BUILD_DATE=$(BUILD_DATE) \
 		-t $(GIT_TAG) .
-		
+
 tag:
 	docker tag $(GIT_TAG) $(BUILD_TAG)
 	docker tag $(GIT_TAG) $(LATEST_TAG)
@@ -38,7 +38,7 @@ push:
 	docker push $(GIT_TAG)
 	docker push $(BUILD_TAG)
 	docker push $(LATEST_TAG)
-	
+
 pre-release: lint build tag test
 
 release: pre-release push
