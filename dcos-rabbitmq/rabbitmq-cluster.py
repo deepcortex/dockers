@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 import logging
-import os
-import subprocess
+import os, os.path
 import time
 import socket
 import requests
-
+import shutil
 
 LOGGER = logging.getLogger(__name__)
 APP_ID = os.getenv('MARATHON_APP_ID')
@@ -138,8 +137,8 @@ def set_erlang_cookie():
         LOGGER.info('Creating erlang cookie file with secret "%s"', rabbitmq_erlang_cookie)
         with open(cookie_file, 'w') as f:
             f.write(rabbitmq_erlang_cookie)
-        subprocess.call(['chown', 'rabbitmq', cookie_file])
-        subprocess.call(['chmod', '600', cookie_file])
+        shutil.chown(cookie_file, 'rabbitmq')
+        os.chmod(cookie_file, 0600)
 
 
 def create_rabbitmq_config_file(node_ips=None):
@@ -180,7 +179,11 @@ def configure_rabbitmq(current_node_hostname, node_ips):
     with open('/etc/rabbitmq/rabbitmq-env.conf', 'a') as f:
         f.write('NODENAME=rabbit@%s\n' % current_node_hostname)
     # other settings are already in environment like port settings, see Dockerfile
-    subprocess.call(['chown', '-R', 'rabbitmq', '/var/lib/rabbitmq'])
+    path = '/var/lib/rabbitmq'
+    for root, dir, files in os.walk('/var/lib/rabbitmq'):
+        for f in files:
+            path = os.path.join(root, f)
+            shutil.chown('rabbitmq', path)
     set_erlang_cookie()
     create_rabbitmq_config_file(node_ips)
 
@@ -191,7 +194,8 @@ def run():
     current_node_hostname = configure_name_resolving(my_ip, other_ips)
     configure_rabbitmq(current_node_hostname, other_ips)
     LOGGER.info('Launching server')
-    subprocess.call(['rabbitmq-server'])
+    import subprocess
+    subprocess.call(['/usr/bin/rabbitmq-server'])
 
 
 if __name__ == '__main__':
