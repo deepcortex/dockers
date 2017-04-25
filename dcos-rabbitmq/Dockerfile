@@ -10,8 +10,6 @@ ENV RABBITMQ_ERLANG_COOKIE=randomstring RABBITMQ_DEFAULT_USER=guest RABBITMQ_DEF
 
 WORKDIR /
 
-RUN echo BUILD_DATE=$(BUILD_DATE) > .meta && echo IMAGE_VERSION=$(IMAGE_VERSION) >> .meta && echo VCS_REF=$(VCS_REF) >> .meta
-
 RUN rm -rf /var/lib/rabbitmq/.cache
 
 COPY ./rabbitmq-cluster.py /rabbitmq-cluster.py
