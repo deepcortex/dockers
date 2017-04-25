@@ -195,7 +195,7 @@ def run():
     configure_rabbitmq(current_node_hostname, other_ips)
     LOGGER.info('Launching server')
     import subprocess
-    subprocess.call(['/usr/bin/rabbitmq-server'])
+    subprocess.call(['/usr/bin/rabbitmq-server'], shell=False)
 
 
 if __name__ == '__main__':
