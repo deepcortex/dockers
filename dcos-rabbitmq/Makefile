@@ -15,7 +15,7 @@ debug:
 	docker run --rm -it $(LATEST_TAG) /bin/sh	
 
 test:	
-    docker run --rm -it $(LATEST_TAG) pwd
+	docker run --rm -it $(LATEST_TAG) pwd
 
 run:
 	docker run --rm -it -v ~/projects:/projects $(LATEST_TAG) /bin/sh
