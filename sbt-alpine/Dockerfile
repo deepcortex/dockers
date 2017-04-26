@@ -32,4 +32,4 @@ LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.vcs-url="https://github.com/deepcortex/dockers" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
-      org.label-schema.docker.cmd="docker run --rm -it -v HOST_PATH:/projects deepcortex/sbt-alpine /bin/sh"
+      org.label-schema.docker.cmd="docker run --rm -it -v HOST_PATH:/projects deepcortex/sbt-alpine /bin/bash"

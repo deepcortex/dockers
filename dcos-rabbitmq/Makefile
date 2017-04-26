@@ -12,13 +12,13 @@ LATEST_TAG=$(QNAME):latest
 default: build tag
 
 debug:
-	docker run --rm -it $(LATEST_TAG) /bin/sh	
+	docker run --rm -it $(LATEST_TAG) /bin/bash	
 
 test:	
 	docker run --rm -it $(LATEST_TAG) pwd
 
 run:
-	docker run --rm -it -v ~/projects:/projects $(LATEST_TAG) /bin/sh
+	docker run --rm -it -v ~/projects:/projects $(LATEST_TAG) /bin/bash
 
 lint:
 	docker run -it --rm -v "$(PWD)/Dockerfile:/Dockerfile:ro" redcoolbeans/dockerlint

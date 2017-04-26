@@ -1,21 +1,13 @@
-FROM openjdk:8-jre-alpine
+FROM ubuntu:16.04
 
-ENV SHARE /usr/local/share
-ENV SCALA_HOME $SHARE/scala
-ENV PATH=$PATH:$SCALA_HOME/bin
+RUN apt-get -y update && apt-get upgrade -y \
+    && apt-get install -y openjdk-8-jre-headless ca-certificates-java \
+    && update-ca-certificates -f \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-ENV SCALA_HOME /usr/local/share/scala
-ENV PATH $PATH:$SCALA_HOME/bin
-
-ENV SCALA_VERSION 2.11.8
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 
 RUN java -version 2>&1 | grep version | sed -e 's/^openjdk version /JAVA_VERSION=/' > $JAVA_HOME/release
-
-RUN apk add --update wget tar bash && \
-    wget --quiet http://downloads.lightbend.com/scala/$SCALA_VERSION/scala-$SCALA_VERSION.tgz && \
-    tar -xf scala-$SCALA_VERSION.tgz && \
-    rm scala-$SCALA_VERSION.tgz && \
-    mv scala-$SCALA_VERSION $SCALA_HOME
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -31,4 +23,4 @@ LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.vcs-url="https://github.com/deepcortex/dockers" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
-      org.label-schema.docker.cmd="docker run --rm -it -v HOST_PATH:/projects deepcortex/scala-alpine scala"
+      org.label-schema.docker.cmd="docker run --rm -it deepcortex/java-ubuntu /bin/bash"
