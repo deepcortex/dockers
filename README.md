@@ -4,6 +4,11 @@
 # dockers
 A set of docker images
 
+## dcos-rabbitmq
+[![](https://images.microbadger.com/badges/image/deepcortex/dcos-rabbitmq.svg)](https://microbadger.com/images/deepcortex/dcos-rabbitmq "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/deepcortex/dcos-rabbitmq.svg)](https://microbadger.com/images/deepcortex/dcos-rabbitmq "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/deepcortex/dcos-rabbitmq.svg)](https://microbadger.com/images/deepcortex/dcos-rabbitmq "Get your own commit badge on microbadger.com")
+
 ## java-ubuntu
 [![](https://images.microbadger.com/badges/image/deepcortex/java-ubuntu.svg)](https://microbadger.com/images/deepcortex/java-ubuntu "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/deepcortex/java-ubuntu.svg)](https://microbadger.com/images/deepcortex/java-ubuntu "Get your own commit badge on microbadger.com")
@@ -16,7 +21,7 @@ A set of docker images
 [![](https://images.microbadger.com/badges/image/deepcortex/sbt-alpine.svg)](https://microbadger.com/images/deepcortex/sbt-alpine "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/deepcortex/sbt-alpine.svg)](https://microbadger.com/images/deepcortex/sbt-alpine "Get your own commit badge on microbadger.com")
 
-## dcos-rabbitmq
-[![](https://images.microbadger.com/badges/image/deepcortex/dcos-rabbitmq.svg)](https://microbadger.com/images/deepcortex/dcos-rabbitmq "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/deepcortex/dcos-rabbitmq.svg)](https://microbadger.com/images/deepcortex/dcos-rabbitmq "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/commit/deepcortex/dcos-rabbitmq.svg)](https://microbadger.com/images/deepcortex/dcos-rabbitmq "Get your own commit badge on microbadger.com")
+## scala-ubuntu
+[![](https://images.microbadger.com/badges/image/deepcortex/scala-ubuntu.svg)](https://microbadger.com/images/deepcortex/scala-ubuntu "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/deepcortex/scala-ubuntu.svg)](https://microbadger.com/images/deepcortex/scala-ubuntu "Get your own version badge on microbadger.com")
+
