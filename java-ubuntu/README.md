@@ -1,6 +1,6 @@
-# scala-alpine
-Docker image providing Ubuntu with Scala
+# java-ubuntu
+Docker image providing Java
 
-FROM openjdk:8-jre
+FROM ubuntu:16.4
 
 To run ```make run```
