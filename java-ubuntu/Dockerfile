@@ -1,10 +1,12 @@
 FROM ubuntu:16.04
 
-RUN apt-get -y update && apt-get upgrade -y \
-    && apt-get install -y wget \
-    && apt-get install -y openjdk-8-jdk ca-certificates-java \
-    && update-ca-certificates -f \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && \
+    apt-get install -y wget && \
+    apt-get install -y openjdk-8-jdk-headless
+
+RUN apt-get install -y ca-certificates-java && \
+    update-ca-certificates -f && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 
