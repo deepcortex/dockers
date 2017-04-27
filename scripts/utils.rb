@@ -7,7 +7,7 @@ end
 def changes
   all = %x[git diff --name-only $TRAVIS_COMMIT_RANGE].split("\n")
   all
-    .select { |path| !path.inclide? "README.md" }
+    .select { |path| !path.include? "README.md" }
     .select { |path| path[/[\w-]*\/.*/] }
 end
 
