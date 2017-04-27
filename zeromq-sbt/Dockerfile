@@ -10,7 +10,7 @@ RUN adduser --shell /bin/bash --disabled-password --system ubuntu \
 RUN echo "deb http://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823 && \
     apt-get -y update && \
-    apt-get install -y sbt && \
+    apt-get install -y --allow-unauthenticated sbt && \
     apt-get clean && apt-get autoclean && apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/*
 
@@ -35,4 +35,4 @@ LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.vcs-url="https://github.com/deepcortex/dockers" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
-      org.label-schema.docker.cmd="docker run --rm -it deepcortex/zeromq-sbt /bin/bash"
+      org.label-schema.docker.cmd="docker run --rm -it -v ~/projects:/projects deepcortex/zeromq-sbt /bin/bash"
