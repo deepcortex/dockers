@@ -25,6 +25,10 @@ A set of docker images
 [![](https://images.microbadger.com/badges/image/deepcortex/scala-ubuntu.svg)](https://microbadger.com/images/deepcortex/scala-ubuntu "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/deepcortex/scala-ubuntu.svg)](https://microbadger.com/images/deepcortex/scala-ubuntu "Get your own version badge on microbadger.com")
 
+## zeromq-sbt
+[![](https://images.microbadger.com/badges/image/deepcortex/zeromq-sbt.svg)](https://microbadger.com/images/deepcortex/zeromq-sbt "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/deepcortex/zeromq-sbt.svg)](https://microbadger.com/images/deepcortex/zeromq-sbt "Get your own commit badge on microbadger.com")
+
 ## zeromq-scala
 [![](https://images.microbadger.com/badges/image/deepcortex/zeromq-scala.svg)](https://microbadger.com/images/deepcortex/zeromq-scala "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/deepcortex/zeromq-scala.svg)](https://microbadger.com/images/deepcortex/zeromq-scala "Get your own commit badge on microbadger.com")
