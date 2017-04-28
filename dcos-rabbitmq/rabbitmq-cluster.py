@@ -180,7 +180,7 @@ def configure_rabbitmq(current_node_hostname, node_ips):
         f.write('NODENAME=rabbit@%s\n' % current_node_hostname)
     # other settings are already in environment like port settings, see Dockerfile
     path = '/var/lib/rabbitmq'
-    for root, dir, files in os.walk('/var/lib/rabbitmq'):
+    for root, _, files in os.walk('/var/lib/rabbitmq'):
         for f in files:
             path = os.path.join(root, f)
             shutil.chown('rabbitmq', path)
