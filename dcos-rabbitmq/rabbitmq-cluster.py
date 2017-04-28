@@ -138,7 +138,7 @@ def set_erlang_cookie():
         with open(cookie_file, 'w') as f:
             f.write(rabbitmq_erlang_cookie)
         shutil.chown(cookie_file, 'rabbitmq')
-        os.chmod(cookie_file, 0600)
+        os.chmod(cookie_file, 0o600)
 
 
 def create_rabbitmq_config_file(node_ips=None):
