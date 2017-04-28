@@ -137,7 +137,7 @@ def set_erlang_cookie():
         LOGGER.info('Creating erlang cookie file with secret "%s"', rabbitmq_erlang_cookie)
         with open(cookie_file, 'w') as f:
             f.write(rabbitmq_erlang_cookie)
-        shutil.chown(cookie_file, 'rabbitmq')
+        shutil.chown(cookie_file, user='rabbitmq')
         os.chmod(cookie_file, 0o600)
 
 
@@ -183,7 +183,7 @@ def configure_rabbitmq(current_node_hostname, node_ips):
     for root, _, files in os.walk('/var/lib/rabbitmq'):
         for f in files:
             path = os.path.join(root, f)
-            shutil.chown('rabbitmq', path)
+            shutil.chown(path, user='rabbitmq')
     set_erlang_cookie()
     create_rabbitmq_config_file(node_ips)
 
