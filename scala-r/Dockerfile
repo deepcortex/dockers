@@ -41,6 +41,6 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.vcs-url="https://github.com/deepcortex/dockers" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
-      org.label-schema.docker.cmd="docker run --rm -it deepcortex/scala-r"
+      org.label-schema.docker.cmd="docker run --rm -it deepcortex/scala-r R"
 
       
