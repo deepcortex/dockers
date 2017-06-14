@@ -4,7 +4,7 @@
 # scala-python3-ml
 Docker image providing ZeroMQ + JZMQ + Scala + Python 3.6.1 + ML Libs
 
-numpy, scipy, scikit-learn, pandas
+numpy, scipy, scikit-learn, pandas, tensorflow, h5py, keras
 
 FROM deepcortex/scala-python3:latest
 
