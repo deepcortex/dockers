@@ -1,6 +1,7 @@
 FROM deepcortex/zeromq-scala:latest
 
 ENV MINICONDA_VERSION 4.3.21
+ENV PYTHON_VERSION 3.5.2
 
 RUN apt-get update --fix-missing && apt-get install -y bzip2 
 
@@ -9,11 +10,14 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
     rm ~/miniconda.sh
 
+
 RUN apt-get purge -y bzip2 && \
     apt-get clean && apt-get autoclean && apt-get -y autoremove && \
     rm -rf /var/lib/apt/lists/*
 
 ENV PATH /opt/conda/bin:$PATH
+
+RUN conda install --quiet --yes python=$PYTHON_VERSION
 
 ARG BUILD_DATE
 ARG VCS_REF
