@@ -3,6 +3,7 @@ FROM deepcortex/scala-python3:latest
 RUN conda install numpy=1.12.1 scipy=0.19.0 h5py=2.7 keras=2.0 tensorflow=1.1.0 scikit-learn pandas && \  
     conda clean -tipsy
 
+
 ARG BUILD_DATE
 ARG VCS_REF
 ARG IMAGE_VERSION
@@ -18,5 +19,6 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run --rm -it deepcortex/scala-python3-ml python"
+
 
       
