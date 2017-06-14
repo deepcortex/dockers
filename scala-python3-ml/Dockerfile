@@ -1,6 +1,7 @@
 FROM deepcortex/scala-python3:latest
 
-RUN conda install numpy scipy scikit-learn pandas
+RUN conda install numpy=1.12.1 scipy=0.19.0 h5py=2.7 keras=2.0 tensorflow=1.1.0 scikit-learn pandas && \  
+    conda clean -tipsy
 
 ARG BUILD_DATE
 ARG VCS_REF

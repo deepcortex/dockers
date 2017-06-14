@@ -37,7 +37,17 @@ A set of docker images
 [![](https://images.microbadger.com/badges/image/deepcortex/zeromq-scala-python.svg)](https://microbadger.com/images/deepcortex/zeromq-scala-python "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/deepcortex/zeromq-scala-python.svg)](https://microbadger.com/images/deepcortex/zeromq-scala-python "Get your own commit badge on microbadger.com")
 
-## zeromq-scala-python3
+## scala-python3
 
 [![](https://images.microbadger.com/badges/image/deepcortex/scala-python3.svg)](https://microbadger.com/images/deepcortex/scala-python3 "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/deepcortex/scala-python3.svg)](https://microbadger.com/images/deepcortex/scala-python3 "Get your own commit badge on microbadger.com")
+
+## scala-python3-ml
+
+[![](https://images.microbadger.com/badges/image/deepcortex/scala-python3-ml.svg)](https://microbadger.com/images/deepcortex/scala-python3-ml "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/deepcortex/scala-python3-ml.svg)](https://microbadger.com/images/deepcortex/scala-python3-ml "Get your own commit badge on microbadger.com")
+
+## scala-r
+
+[![](https://images.microbadger.com/badges/image/deepcortex/scala-r.svg)](https://microbadger.com/images/deepcortex/scala-r "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/deepcortex/scala-r.svg)](https://microbadger.com/images/deepcortex/scala-r "Get your own commit badge on microbadger.com")
