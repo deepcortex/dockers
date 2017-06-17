@@ -18,7 +18,7 @@ test:
 	docker run --rm -it $(LATEST_TAG) pwd
 
 run:
-	docker run -it -p 8888:8888 $(LATEST_TAG) jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --no-browser
+	docker run -it -p docker run -it -p 8888:8888 $(LATEST_TAG)
 
 lint:
 	docker run -it --rm -v "$(PWD)/Dockerfile:/Dockerfile:ro" redcoolbeans/dockerlint

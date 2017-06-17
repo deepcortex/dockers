@@ -8,6 +8,8 @@ ENV HOME /home/
 EXPOSE 8888
 WORKDIR $HOME
 
+CMD["jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --no-browser"]
+
 ARG BUILD_DATE
 ARG VCS_REF
 ARG IMAGE_VERSION
@@ -22,7 +24,7 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.vcs-url="https://github.com/deepcortex/dockers" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
-      org.label-schema.docker.cmd="docker run --rm -it deepcortex/python3-ml-jupyter python"
+      org.label-schema.docker.cmd="docker run -it -p 8888:8888 deepcortex/python3-ml-jupyter"
 
 
       
