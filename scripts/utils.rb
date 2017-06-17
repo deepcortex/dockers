@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 def exclusion
-  %w[ scripts ]
+  %w[ scripts internal ]
 end
 
 def changes
