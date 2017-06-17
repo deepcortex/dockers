@@ -1,6 +1,10 @@
 [![Build Status](https://travis-ci.org/deepcortex/dockers.svg?branch=master)](https://travis-ci.org/deepcortex/dockers)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/4e7b52b9b6ae4ae9be6c5eb6c6a0db76)](https://www.codacy.com/app/ssemichev_2/dockers?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=deepcortex/dockers&amp;utm_campaign=Badge_Grade)
 
+## Image inheritance diagram
+
+[![Image inheritance diagram](internal/inherit-diagram.png)](http://interactive.blockdiag.com/?compression=deflate&src=eJx9jk0OwiAQRvc9xVyAlRsTo1cxQ0uVShmkg0lrvLvQYCCpunzf9-ZHGmpvncYLPBsA8lpZRtZk4QiOPHvUfIhNp3oMhs89WZ70omK9T_mADxRBBssBxAmmFs2HU11z6hflabyLNS49GqetWuclZ0ptbZftbuYr2d03oebs_d7j_22QXN7LBzcfiNFspJglr5AYQgQVj0W1eb0BxpN7LA)
+
 # dockers
 A set of docker images
 
