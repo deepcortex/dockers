@@ -103,7 +103,6 @@ sudo ifconfig lo0 alias 10.200.10.1/24
 
 ```
 make run
-
 ```
 
 # To run HDFS commands in Docker
