@@ -129,9 +129,9 @@ def set_erlang_cookie():
 
     if existing_rabbitmq_erlang_cookie\
             and existing_rabbitmq_erlang_cookie != rabbitmq_erlang_cookie:
-        LOGGER.warn('%s file contents [%s] do not match RABBITMQ_ERLANG_COOKIE [%s],'
-                    ' keeping existing one.',
-                    cookie_file, existing_rabbitmq_erlang_cookie, rabbitmq_erlang_cookie)
+        LOGGER.info('Changing erlang cookie to "%s"', rabbitmq_erlang_cookie)
+        with open(cookie_file, 'w') as f:
+            f.write(rabbitmq_erlang_cookie)
 
     if not existing_rabbitmq_erlang_cookie:
         LOGGER.info('Creating erlang cookie file with secret "%s"', rabbitmq_erlang_cookie)
