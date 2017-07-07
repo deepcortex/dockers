@@ -35,7 +35,7 @@ ln -s /usr/local/hadoop /opt/hadoop
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://localhost:9000</value>
+        <value>hdfs://10.200.10.1:9000</value>
     </property>
 </configuration>
 ```
