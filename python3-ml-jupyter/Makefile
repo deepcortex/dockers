@@ -42,4 +42,3 @@ push:
 pre-release: lint build tag test
 
 release: pre-release push
-

@@ -3,6 +3,8 @@ FROM deepcortex/scala-python3-ml:latest
 RUN conda install --quiet --yes jupyter && \
     conda clean -tipsy
 
+RUN pip install matplotlib
+
 ENV HOME /home/projects/
 
 EXPOSE 8888
@@ -26,6 +28,3 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run -it -p 8888:8888 -v <local-projects-path>:/home/projects deepcortex/python3-ml-jupyter"
-
-
-      
