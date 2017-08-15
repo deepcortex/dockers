@@ -3,6 +3,8 @@ FROM deepcortex/scala-python3-ml:latest
 RUN conda install --quiet --yes jupyter && \
     conda clean -tipsy
 
+RUN pip install matplotlib
+
 ENV HOME /home/projects/
 
 EXPOSE 8888
