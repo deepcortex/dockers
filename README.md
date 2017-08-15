@@ -3,7 +3,7 @@
 
 ## Image inheritance diagram
 
-[![Image inheritance diagram](internal/inherit-diagram.png)](http://interactive.blockdiag.com/?compression=deflate&src=eJx9jk0OwiAQRvc9xVyAlRsTo1cxQ0uVShmkg0lrvLvQYCCpunzf9-ZHGmpvncYLPBsA8lpZRtZk4QiOPHvUfIhNp3oMhs89WZ70omK9T_mADxRBBssBxAmmFs2HU11z6hflabyLNS49GqetWuclZ0ptbZftbuYr2d03oebs_d7j_22QXN7LBzcfiNFspJglr5AYQgQVj0W1eb0BxpN7LA)
+[![Image inheritance diagram](internal/inherit-diagram.png)](http://interactive.blockdiag.com/?compression=deflate&src=eJyFjk0OwiAQhfc9xVyAlRuTRq9ihpZaKmUqHUys8e5Cg4Gk_iy_9z4eIw01l1bjGR4VADmtLCNrsnCAiRw71FyHplUdesOnjizPelGh3sd8wBsKL71lD-IIc4PmzbEuOfaLcjRexRrnHs2krVrfS04U29LO69Ode7K7T0LJyfu-434tSM7npQ83F4jRbKSQRS-TGHwA5f6ZfdvNdfV8AfwShrs)
 
 # dockers
 A set of docker images
