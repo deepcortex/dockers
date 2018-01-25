@@ -8,9 +8,9 @@ RUN echo "deb http://repos.mesosphere.io/ubuntu/ xenial main" > /etc/apt/sources
 
 ENV MESOS_NATIVE_JAVA_LIBRARY=/usr/local/lib/libmesos.so
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \
