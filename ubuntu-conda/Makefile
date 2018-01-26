@@ -1,5 +1,5 @@
 OWNER=deepcortex
-IMAGE_NAME=java-ubuntu
+IMAGE_NAME=ubuntu-conda
 VCS_REF=`git rev-parse --short HEAD`
 IMAGE_VERSION=1.0.$(TRAVIS_BUILD_NUMBER)
 BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"`
