@@ -3,7 +3,7 @@ FROM deepcortex/zeromq-scala:latest
 ENV MINICONDA_VERSION 4.3.21
 ENV PYTHON_VERSION 3.5.2
 
-RUN apt-get update --fix-missing && apt-get install -y bzip2 
+RUN apt-get update --fix-missing && apt-get install -y bzip2
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-$MINICONDA_VERSION-Linux-x86_64.sh -O ~/miniconda.sh && \
@@ -34,4 +34,3 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run --rm -it deepcortex/scala-python3 python"
 
-      

@@ -3,9 +3,9 @@ FROM deepcortex/scala-python3-ml:latest
 RUN wget "http://supergsego.com/apache/hadoop/common/hadoop-2.6.5/hadoop-2.6.5.tar.gz" && \
     tar xvfz hadoop-2.6.5.tar.gz && \
     mv hadoop-2.6.5 /opt/ && \
-    rm hadoop-2.6.5.tar.gz && \ 
-    ln -s /opt/hadoop-2.6.5 /opt/hadoop 
-    
+    rm hadoop-2.6.5.tar.gz && \
+    ln -s /opt/hadoop-2.6.5 /opt/hadoop
+
 RUN conda install --yes hdfs3 -c conda-forge
 
 ENV LIBHDFS3_CONF /etc/hadoop/conf/hdfs-site.xml
@@ -32,4 +32,4 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run --rm -it -v ./input-files:/tmp deepcortex/python3-hdfs /bin/bash"
-      
+

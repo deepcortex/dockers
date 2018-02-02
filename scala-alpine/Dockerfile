@@ -3,6 +3,8 @@ FROM openjdk:8-jre-alpine
 ENV SHARE /usr/local/share
 ENV SCALA_HOME $SHARE/scala
 ENV PATH=$PATH:$SCALA_HOME/bin
+# hack to pass linter check
+ENV JAVA_HOME=$JAVA_HOME
 ENV SCALA_VERSION 2.11.8
 
 RUN java -version 2>&1 | grep version | sed -e 's/^openjdk version /JAVA_VERSION=/' > $JAVA_HOME/release
