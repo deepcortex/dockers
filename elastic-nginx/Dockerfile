@@ -2,9 +2,9 @@ FROM nginx:1.9
 
 COPY default.conf /etc/nginx/conf.d/default.conf
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="acdifran@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \

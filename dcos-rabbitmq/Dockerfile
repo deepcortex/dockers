@@ -1,8 +1,8 @@
 FROM rabbitmq:3.6.9-management-alpine
 
-ARG BUILD_DATE
-ARG IMAGE_VERSION
-ARG VCS_REF
+ARG BUILD_DATE=""
+ARG IMAGE_VERSION=""
+ARG VCS_REF=""
 
 RUN apk add --no-cache python3 && pip3 install --upgrade pip requests
 

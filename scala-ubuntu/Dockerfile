@@ -9,9 +9,9 @@ RUN wget --quiet http://downloads.lightbend.com/scala/$SCALA_VERSION/scala-$SCAL
     ln -s /usr/local/scala-$SCALA_VERSION $SCALA_HOME && \
     rm scala-$SCALA_VERSION.tgz
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \

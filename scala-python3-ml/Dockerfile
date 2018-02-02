@@ -5,9 +5,9 @@ RUN conda install numpy scipy h5py keras tensorflow scikit-learn pandas py-xgboo
 
 RUN pip install bunch
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \

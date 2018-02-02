@@ -18,9 +18,9 @@ ENV PATH /opt/conda/bin:$PATH
 
 RUN conda install --quiet --yes python=$PYTHON_VERSION
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \

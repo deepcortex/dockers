@@ -13,9 +13,9 @@ RUN apk add --update wget tar bash && \
     rm scala-$SCALA_VERSION.tgz && \
     mv scala-$SCALA_VERSION $SCALA_HOME
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \

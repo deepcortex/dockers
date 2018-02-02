@@ -4,9 +4,9 @@ RUN rm -f /usr/share/logstash/config/logstash.yml
 ADD pipeline/ /usr/share/logstash/pipeline/
 COPY config/logstash.yml /usr/share/logstash/config/logstash.yml
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="acdifran@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \
