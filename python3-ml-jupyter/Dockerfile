@@ -28,3 +28,5 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run -it -p 8888:8888 -v <local-projects-path>:/home/projects deepcortex/python3-ml-jupyter"
+
+
