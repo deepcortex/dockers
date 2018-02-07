@@ -23,3 +23,5 @@ LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run --rm -it deepcortex/mesos-java scala"
+
+
