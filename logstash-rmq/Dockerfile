@@ -19,3 +19,5 @@ LABEL maintainer="acdifran@gmail.com" \
       org.label-schema.docker.cmd="docker run --rm -it deepcortex/logstash-rmq R"
 
       
+
+
