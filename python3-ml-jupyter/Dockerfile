@@ -13,9 +13,9 @@ WORKDIR $HOME
 
 CMD ["/bin/bash", "-c", "/opt/conda/bin/jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root --no-browser"]
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \

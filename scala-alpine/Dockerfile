@@ -3,6 +3,8 @@ FROM openjdk:8-jre-alpine
 ENV SHARE /usr/local/share
 ENV SCALA_HOME $SHARE/scala
 ENV PATH=$PATH:$SCALA_HOME/bin
+# hack to pass linter check
+ENV JAVA_HOME=$JAVA_HOME
 ENV SCALA_VERSION 2.11.8
 
 RUN java -version 2>&1 | grep version | sed -e 's/^openjdk version /JAVA_VERSION=/' > $JAVA_HOME/release
@@ -13,9 +15,9 @@ RUN apk add --update wget tar bash && \
     rm scala-$SCALA_VERSION.tgz && \
     mv scala-$SCALA_VERSION $SCALA_HOME
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \

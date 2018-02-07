@@ -1,13 +1,13 @@
 FROM deepcortex/scala-python3:latest
 
-RUN conda install numpy scipy h5py keras tensorflow scikit-learn pandas py-xgboost && \  
+RUN conda install numpy scipy h5py keras tensorflow scikit-learn pandas py-xgboost && \
     conda clean -tipsy
 
 RUN pip install bunch
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \
@@ -21,6 +21,3 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run --rm -it deepcortex/scala-python3-ml python"
 
-
-
-      

@@ -12,9 +12,9 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 
 RUN java -version 2>&1 | grep version | sed -e 's/^openjdk version /JAVA_VERSION=/' > $JAVA_HOME/release
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \

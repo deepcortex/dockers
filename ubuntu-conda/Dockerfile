@@ -1,22 +1,18 @@
-FROM deepcortex/scala-alpine:latest
+FROM ubuntu:16.04
 
-ENV SBT_VERSION 0.13.15
-ENV SBT_HOME /usr/local/sbt-launcher-packaging-${SBT_VERSION}
-ENV PATH ${PATH}:${SBT_HOME}/bin
+ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-RUN apk --no-cache add sudo \
-    && adduser -s /bin/sh -D -S alpine \
-    && echo "alpine ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
+    libglib2.0-0 libxext6 libsm6 libxrender1 \
+    git mercurial subversion && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN wget -O- "http://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz" \
-    |  tar xzf - -C /usr/local --strip-components=1
+RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
+    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-4.3.27-Linux-x86_64.sh -O ~/miniconda.sh && \
+    /bin/bash ~/miniconda.sh -b -p /opt/conda && \
+    rm ~/miniconda.sh
 
-USER alpine
-
-VOLUME /projects
-WORKDIR /projects
-
-RUN sbt exit
+ENV PATH /opt/conda/bin:$PATH
 
 ARG BUILD_DATE=""
 ARG VCS_REF=""
@@ -32,4 +28,4 @@ LABEL maintainer="ssemichev@gmail.com" \
       org.label-schema.vcs-url="https://github.com/deepcortex/dockers" \
       org.label-schema.vendor="DeepCortex" \
       org.label-schema.schema-version="1.0" \
-      org.label-schema.docker.cmd="docker run --rm -it -v HOST_PATH:/projects deepcortex/sbt-alpine /bin/bash"
+      org.label-schema.docker.cmd="docker run --rm -it deepcortex/java-ubuntu /bin/bash"
