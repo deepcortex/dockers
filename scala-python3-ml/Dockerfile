@@ -21,3 +21,4 @@ LABEL maintainer="nsemichev@gmail.com" \
       org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run --rm -it deepcortex/scala-python3-ml python"
 
+
