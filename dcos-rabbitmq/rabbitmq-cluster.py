@@ -5,6 +5,7 @@ import time
 import socket
 import requests
 import shutil
+import random
 
 LOGGER = logging.getLogger(__name__)
 APP_ID = os.getenv('MARATHON_APP_ID')
@@ -195,6 +196,8 @@ def run():
     configure_rabbitmq(current_node_hostname, other_ips)
     LOGGER.info('Launching server')
     import subprocess
+    delay = random.randint(0, 90)
+    time.sleep(delay)
     subprocess.call(['/opt/rabbitmq/sbin/rabbitmq-server'], shell=False)
 
 
