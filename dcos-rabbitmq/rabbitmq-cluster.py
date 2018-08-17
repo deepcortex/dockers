@@ -188,16 +188,25 @@ def configure_rabbitmq(current_node_hostname, node_ips):
     set_erlang_cookie()
     create_rabbitmq_config_file(node_ips)
 
+def smallest(my_ip, other_ips):
+    for ip in other_ips:
+        if my_ip > ip:
+            return False
+        else:
+            return True
 
 def run():
     wait_for_nodes_to_start()
     my_ip, other_ips = get_node_ips()
     current_node_hostname = configure_name_resolving(my_ip, other_ips)
     configure_rabbitmq(current_node_hostname, other_ips)
-    LOGGER.info('Launching server')
     import subprocess
-    delay = random.randint(0, 90)
-    time.sleep(delay)
+    delay = 90
+
+    if not smallest(my_ip, other_ips):
+        time.sleep(delay)
+
+    LOGGER.info('Launching server')
     subprocess.call(['/opt/rabbitmq/sbin/rabbitmq-server'], shell=False)
 
 
