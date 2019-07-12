@@ -2,9 +2,9 @@ FROM haproxy:1.7.9
 
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
 
-ARG BUILD_DATE
-ARG VCS_REF
-ARG IMAGE_VERSION
+ARG BUILD_DATE=""
+ARG VCS_REF=""
+ARG IMAGE_VERSION=""
 
 LABEL maintainer="acdifran@gmail.com" \
       org.label-schema.build-date=$BUILD_DATE \
