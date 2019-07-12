@@ -15,8 +15,13 @@ debug:
 	docker run --rm -it $(LATEST_TAG) /bin/bash
 
 test:
-	docker run -e S3_BUCKET="dev.deepcortex.ai.s3.amazonaws.com" --rm $(LATEST_TAG) \
-		haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
+	docker run -e S3_BUCKET="dev.deepcortex.ai.s3.amazonaws.com" \
+	    -e BAILE_API_PATH="baile" \
+	    -e SQL_SERVER_API_PATH="sql" \
+	    -e BAILE_ADDRESS="localhost:8080" \
+	    -e SQL_SERVER_ADDRESS="localhost:8080" \
+	    --rm $(LATEST_TAG) \
+	    haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
 
 run:
 	docker run --rm -it $(LATEST_TAG) R
