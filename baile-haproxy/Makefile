@@ -20,6 +20,8 @@ test:
 		-e SQL_SERVER_API_PATH="sql" \
 		-e BAILE_ADDRESS="127.0.0.1:1111" \
 		-e SQL_SERVER_ADDRESS="127.0.0.1:1111" \
+		-e VPC_DNS="127.0.0.1" \
+		-e DNS_RESOLVER="google" \
 		--rm -it $(LATEST_TAG) \
 		haproxy -c -f /usr/local/etc/haproxy/haproxy.cfg
 
