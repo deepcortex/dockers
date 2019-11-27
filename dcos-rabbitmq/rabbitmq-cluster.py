@@ -10,29 +10,34 @@ import random
 LOGGER = logging.getLogger(__name__)
 APP_ID = os.getenv('MARATHON_APP_ID')
 MESOS_TASK_ID = os.getenv('MESOS_TASK_ID')
-MARATHON_URI = os.environ.get('MARATHON_URI', 'http://marathon.mesos:8080')
+MARATHON_URI = os.environ.get('MARATHON_URI', 'https://master.mesos:8443')
 HOST_IP = os.getenv('HOST', '127.0.0.1')
 HOST_NAME = os.getenv('HOSTNAME')  # docker container_id
 
+def get_authentication_token(marathon_client_marathon_username, marathon_client_marathon_password):
+    payload = {"uid": marathon_client_marathon_username,"password": marathon_client_marathon_password}
+    response = requests.post('https://master.mesos/acs/api/v1/auth/login', json=payload, verify=False)
+    state = response.json()
+    return state['token']
 
-def get_marathon_app(app_id):
-    response = requests.get('%s/v2/apps%s' % (MARATHON_URI, app_id))
+def get_marathon_app(app_id, authentication_token):
+    response = requests.get('%s/v2/apps%s' % (MARATHON_URI, app_id), headers={'Authorization': 'token=' + authentication_token}, verify=False)
     state = response.json()
     return state['app']
 
 
-def get_marathon_tasks(app_id):
-    response = requests.get('%s/v2/apps%s/tasks' % (MARATHON_URI, app_id))
+def get_marathon_tasks(app_id, authentication_token):
+    response = requests.get('%s/v2/apps%s/tasks' % (MARATHON_URI, app_id), headers={'Authorization': 'token=' + authentication_token}, verify=False)
     state = response.json()
     return state['tasks']
 
 
-def get_node_ips():
+def get_node_ips(authentication_token):
     my_ip = ''
     other_ips = []
     if MARATHON_URI:
         LOGGER.info('Discovering configuration from %s for app %s', MARATHON_URI, APP_ID)
-        tasks = get_marathon_tasks(APP_ID)
+        tasks = get_marathon_tasks(APP_ID, authentication_token)
         LOGGER.info('Found %d tasks for %s', len(tasks), APP_ID)
         for task in tasks:
             if task['startedAt']:
@@ -53,9 +58,9 @@ def get_node_ips():
     return my_ip, other_ips
 
 
-def wait_for_nodes_to_start():
+def wait_for_nodes_to_start(authentication_token):
     while True:
-        current_app = get_marathon_app(APP_ID)
+        current_app = get_marathon_app(APP_ID, authentication_token)
         configured_count = current_app['instances']
         running_count = current_app['tasksRunning']
         if running_count == configured_count:
@@ -196,8 +201,11 @@ def smallest(my_ip, other_ips):
             return True
 
 def run():
-    wait_for_nodes_to_start()
-    my_ip, other_ips = get_node_ips()
+    marathon_client_marathon_username = os.getenv('MARATHON_CLIENT_MARATHON_USERNAME', None)
+    marathon_client_marathon_password = os.getenv('MARATHON_CLIENT_MARATHON_PASSWORD', None)
+    authentication_token = get_authentication_token(marathon_client_marathon_username, marathon_client_marathon_password)
+    wait_for_nodes_to_start(authentication_token)
+    my_ip, other_ips = get_node_ips(authentication_token)
     current_node_hostname = configure_name_resolving(my_ip, other_ips)
     configure_rabbitmq(current_node_hostname, other_ips)
     import subprocess
