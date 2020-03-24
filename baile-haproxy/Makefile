@@ -18,8 +18,10 @@ test:
 	docker run -e S3_BUCKET="dev.deepcortex.ai.s3.amazonaws.com" \
 		-e BAILE_API_PATH="baile" \
 		-e SQL_SERVER_API_PATH="sql" \
+		-e REMOTE_JOB_GW_PATH="remote" \
 		-e BAILE_ADDRESS="127.0.0.1:1111" \
-		-e SQL_SERVER_ADDRESS="127.0.0.1:1111" \
+		-e SQL_SERVER_ADDRESS="127.0.0.1:1112" \
+		-e REMOTE_JOB_GW_ADDRESS="127.0.0.1:1113" \
 		-e VPC_DNS="127.0.0.1" \
 		-e DNS_RESOLVER="google" \
 		--rm -it $(LATEST_TAG) \
