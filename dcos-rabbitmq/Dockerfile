@@ -17,7 +17,9 @@ ENV RABBITMQ_ERLANG_COOKIE=randomstring \
     ERL_EPMD_PORT=4369 \
     RABBITMQ_HIPE_COMPILE=1 \
     RABBITMQ_MANAGEMENT_PORT=15672 \
-    MARATHON_URI=http://marathon.mesos:8080
+    MARATHON_URI=http://marathon.mesos:8080 \
+    MARATHON_CLIENT_MARATHON_USERNAME=marathon_username \
+    MARATHON_CLIENT_MARATHON_PASSWORD=marathon_password
 
 WORKDIR /
 
