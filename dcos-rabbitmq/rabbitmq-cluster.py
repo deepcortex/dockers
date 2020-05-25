@@ -192,8 +192,8 @@ def smallest(my_ip, other_ips):
     for ip in other_ips:
         if my_ip > ip:
             return False
-        else:
-            return True
+
+    return True
 
 def run():
     wait_for_nodes_to_start()
